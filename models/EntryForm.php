@@ -15,7 +15,7 @@ class EntryForm extends Model
             [['name','email'], 'required'],
             ['email','email']
             
-            //test2
+            //test4
             
         ];
     }
