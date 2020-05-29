@@ -12,6 +12,8 @@ use yii\base\Model;
 
 class CurrentTime extends Model
 {
+    //test
+    
     private $currTime;
     
     function __construct() {
