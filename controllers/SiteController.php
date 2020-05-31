@@ -11,9 +11,10 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 
 use app\models\ServerTime;
+use app\models\StorageTime;
 use app\models\CurrentTime;
 use app\models\EntryForm;
-
+use app\models\ET;
 
 class SiteController extends Controller
 {
@@ -136,6 +137,7 @@ class SiteController extends Controller
         //return $message; 
         //return $this->render('about');
         return $this->render('mysay',['message'=> $message]);
+        
     }
     
     public function actionServertime($message = "Hello")
@@ -171,4 +173,44 @@ class SiteController extends Controller
             // либо страница отображается первый раз, либо есть ошибка в данных
         }
     }
+    
+ /*   public function actionHello()
+    { 
+          $model = new StorageTime();
+          $currentTime = $model->time; 
+          if ($model->load(Yii::$app->request->post())) {
+      //      return $this->render('times', ['curr3Time' => $currentTime]);
+          return $this->render('hello', ['model' => $model,'time' => $model->time]);
+          } else { 
+                 return $this->render('hello', ['model' => $model, 'time' => 'non-post']);
+        }
+    }  */
+    
+    
+        public function actionHello()
+    { 
+          $model = new StorageTime();
+          $currentTime = $model->time; 
+          
+        $time2 = new CurrentTime();
+        $time = $time2->getCurrentTime();
+        
+          if ($model->load(Yii::$app->request->post())) {
+      //      return $this->render('times', ['curr3Time' => $currentTime]);
+          return $this->render('times', ['currTime' => $time,'curr3Time' => $model->time]);
+          } else { 
+                 return $this->render('hello', ['model' => $model, 'time' => 'non-post']);
+        }
+    }  
+    
+    
+    
+  //  public function actionHello()
+   // {
+        //return $message; 
+        //return $this->render('about');
+   //     return $this->render('hello');  //,['message'=> $message]);
+        
+   // }
+    
 }

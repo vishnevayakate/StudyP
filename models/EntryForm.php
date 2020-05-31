@@ -9,13 +9,14 @@ class EntryForm extends Model
     public $name;
     public $email;
     
+    
     public function rules()
     {
         return [
             [['name','email'], 'required'],
             ['email','email']
             
-            //test1
+          //test4
             
         ];
     }

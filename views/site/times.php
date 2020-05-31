@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <link rel="stylesheet" href="css/main.css">		<!-- подключаем CSS с названием main.css -->
+        <link rel="stylesheet" href="../../web/css/main.css">		<!-- подключаем CSS с названием main.css -->
 		<meta charset='utf-8'>
         <title>DataTimeProject</title>
     </head>
@@ -27,7 +27,7 @@
  		<div class="orange_text">Новое присвоенное время:   </div>		<!-- вот на эту строку подействует style.css --> 
 			<?php											//начало php кода в html документе. Даже комментарий другого формата, обратили вниамние?
 				//require_once "php_time.php";				
-                                echo $currTime;
+                                echo $curr3Time;
 			?>												<!-- конец php. Комментарий опять другого формата-->		             
 		
     </body>	
